@@ -77,7 +77,7 @@
             <div class="h4 mt-0 title">Basic Information</div>
             <div class="row">
               <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
-              <div class="col-sm-8"><span id="contador"></span></div>
+              <div class="col-sm-8"><span id="idade"></span></div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
@@ -127,14 +127,14 @@
                               <span class="progress-badge">Java</span>
                               <div class="progress">
                                   <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                  <span class="progress-value">60%</span>
+                                  <span class="progress-value">45%</span>
                               </div>
                           </div>
                           <div class="progress-container progress-primary" style="flex: 1 0 45%; margin: 10px;">
                               <span class="progress-badge">SQL</span>
                               <div class="progress">
                                   <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                  <span class="progress-value">60%</span>
+                                  <span class="progress-value">50%</span>
                               </div>
                           </div>
                           <div class="progress-container progress-primary" style="flex: 1 0 45%; margin: 10px;">
@@ -148,18 +148,32 @@
                               <span class="progress-badge">UiPath</span>
                               <div class="progress">
                                   <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                                  <span class="progress-value">75%</span>
+                                  <span class="progress-value">65%</span>
                               </div>
                           </div>
                           <div class="progress-container progress-primary" style="flex: 1 0 45%; margin: 10px;">
                               <span class="progress-badge">Blue Prism</span>
                               <div class="progress">
                                   <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%;"></div>
-                                  <span class="progress-value">55%</span>
+                                  <span class="progress-value">45%</span>
                               </div>
                           </div>
                           <div class="progress-container progress-primary" style="flex: 1 0 45%; margin: 10px;">
                               <span class="progress-badge">PowerBI</span>
+                              <div class="progress">
+                                  <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                                  <span class="progress-value">55%</span>
+                              </div>
+                          </div>
+                        <div class="progress-container progress-primary" style="flex: 1 0 45%; margin: 10px;">
+                              <span class="progress-badge">Power Automate</span>
+                              <div class="progress">
+                                  <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                                  <span class="progress-value">95%</span>
+                              </div>
+                          </div>
+                        <div class="progress-container progress-primary" style="flex: 1 0 45%; margin: 10px;">
+                              <span class="progress-badge">Copilot Studio</span>
                               <div class="progress">
                                   <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
                                   <span class="progress-value">85%</span>
@@ -379,61 +393,20 @@
     <script src="js/now-ui-kit.js?ver=1.1.0"></script>
     <script src="js/aos.js?ver=1.1.0"></script>
     <script src="scripts/main.js?ver=1.1.0"></script>
-    <script>
-      // Função para verificar se é 13 de fevereiro
-      function verificarData() {
-          const hoje = new Date();
-          const dia = hoje.getDate();
-          const mes = hoje.getMonth(); // Janeiro é 0, então fevereiro é 1
-          
-          // Verifica se hoje é 13 de fevereiro
-          if (dia === 13 && mes === 1) {
-              atualizarContador();
-          } else {
-              exibirContador();
-          }
-      }
-  
-      // Função para atualizar o contador
-      function atualizarContador() {
-          // Obtém o contador do localStorage
-          let contador = localStorage.getItem('contador13Fevereiro');
-          let ultimoAnoAtualizado = localStorage.getItem('ultimoAnoAtualizado');
-  
-          const anoAtual = new Date().getFullYear();
-  
-          // Inicializa o contador com 22 se não houver valor no localStorage
-          if (!contador) {
-              contador = 22;
-          } else {
-              contador = parseInt(contador);
-          }
-  
-          // Verifica se já foi atualizado este ano
-          if (ultimoAnoAtualizado != anoAtual) {
-              contador += 1;
-              localStorage.setItem('contador13Fevereiro', contador);
-              localStorage.setItem('ultimoAnoAtualizado', anoAtual);
-          }
-  
-          // Exibe o contador atualizado
-          document.getElementById('contador').textContent = contador;
-      }
-  
-      // Função para exibir o contador sem incrementá-lo
-      function exibirContador() {
-          let contador = localStorage.getItem('contador13Fevereiro');
-          
-          // Se não existir um contador, inicializa com 22
-          if (!contador) {
-              contador = 22;
-          }
-  
-          document.getElementById('contador').textContent = contador;
-      }
-  
-      // Executa a verificação ao carregar a página
-      document.addEventListener('DOMContentLoaded', verificarData);
-    </script>              
+    <span id="idade"></span>
+
+  <script>
+    const hoje = new Date();
+    const anoNascimento = 2002;
+    const mesNascimento = 1; // Fevereiro = 1
+
+    let idade = hoje.getFullYear() - anoNascimento;
+
+    if (hoje.getMonth() < mesNascimento) {
+      idade--;
+    }
+
+    document.getElementById("idade").innerHTML = idade + " anos";
+  </script>              
   </body>
 </html>
